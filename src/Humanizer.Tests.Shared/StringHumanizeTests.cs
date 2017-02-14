@@ -8,6 +8,7 @@ namespace Humanizer.Tests
         [InlineData("PascalCaseInputStringIsTurnedIntoSentence", "Pascal case input string is turned into sentence")]
         [InlineData("WhenIUseAnInputAHere", "When I use an input a here")]
         [InlineData("10IsInTheBegining", "10 is in the begining")]
+        [InlineData("NumberIsFollowedByLowerCase5th", "Number is followed by lower case 5th")]
         [InlineData("NumberIsAtTheEnd100", "Number is at the end 100")]
         [InlineData("XIsFirstWordInTheSentence", "X is first word in the sentence")]
         [InlineData("XIsFirstWordInTheSentence ThenThereIsASpace", "X is first word in the sentence then there is a space")]
@@ -17,7 +18,23 @@ namespace Humanizer.Tests
         [InlineData("?)@", "")]
         [InlineData("?", "")]
         [InlineData("", "")]
+        [InlineData("JeNeParlePasFrançais", "Je ne parle pas français")]
         public void CanHumanizeStringInPascalCase(string input, string expectedResult)
+        {
+            Assert.Equal(expectedResult, input.Humanize());
+        }
+
+        [Theory, UseCulture("tr-TR")]
+        [InlineData("istanbul", "İstanbul")]
+        [InlineData("diyarbakır", "Diyarbakır")]
+        public void CanHumanizeStringInPascalCaseInTurkish(string input, string expectedResult)
+        {
+            Assert.Equal(expectedResult, input.Humanize());
+        }
+
+        [Theory, UseCulture("ar")]
+        [InlineData("جمهورية ألمانيا الاتحادية", "جمهورية ألمانيا الاتحادية")]
+        public void CanHumanizeOtherUnicodeLetter(string input, string expectedResult)
         {
             Assert.Equal(expectedResult, input.Humanize());
         }
@@ -55,7 +72,9 @@ namespace Humanizer.Tests
         [InlineData("CanReturnTitleCase", "Can Return Title Case")]
         [InlineData("Can_return_title_Case", "Can Return Title Case")]
         [InlineData("Title_humanization_Honors_ALLCAPS", "Title Humanization Honors ALLCAPS")]
-        public void CanHumanizeIntoTileCase(string input, string expectedResult)
+        [InlineData("MühldorferStraße23", "Mühldorfer Straße 23")]
+        [InlineData("mühldorfer_STRAẞE_23", "Mühldorfer STRAẞE 23")]
+        public void CanHumanizeIntoTitleCase(string input, string expectedResult)
         {
             Assert.Equal(expectedResult, input.Humanize(LetterCasing.Title));
         }
@@ -63,6 +82,7 @@ namespace Humanizer.Tests
         [Theory]
         [InlineData("CanReturnLowerCase", "can return lower case")]
         [InlineData("LOWERCASE", "lowercase")]
+        [InlineData("STRAẞE", "straße")]
         public void CanHumanizeIntoLowerCase(string input, string expectedResult)
         {
             Assert.Equal(expectedResult, input.Humanize(LetterCasing.LowerCase));
@@ -71,6 +91,7 @@ namespace Humanizer.Tests
         [Theory]
         [InlineData("CanReturnSentenceCase", "Can return sentence case")]
         [InlineData("", "")]
+        [InlineData("égoïste", "Égoïste")]
         public void CanHumanizeIntoSentenceCase(string input, string expectedResult)
         {
             Assert.Equal(expectedResult, input.Humanize(LetterCasing.Sentence));
@@ -79,6 +100,7 @@ namespace Humanizer.Tests
         [Theory]
         [InlineData("CanHumanizeIntoUpperCase", "CAN HUMANIZE INTO UPPER CASE")]
         [InlineData("Can_Humanize_into_Upper_case", "CAN HUMANIZE INTO UPPER CASE")]
+        [InlineData("coûts_privés", "COÛTS PRIVÉS")]
         public void CanHumanizeIntoUpperCase(string input, string expectedResult)
         {
             Assert.Equal(expectedResult, input.Humanize(LetterCasing.AllCaps));

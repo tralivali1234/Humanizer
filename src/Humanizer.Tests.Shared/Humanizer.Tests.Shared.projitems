@@ -64,7 +64,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\fi-FI\DateHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\fi-FI\NumberToWordsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\fr-BE\DateHumanizeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localisation\fr-BE\NumberToWordsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\fr-BE\TimeSpanHumanizeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localisation\fr-CH\NumberToWordsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\fr\DateHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\fr\NumberToWordsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\fr\TimeSpanHumanizeTests.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\he\NumberToWordsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\he\TimeSpanHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\hr\DateHumanizeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localisation\hr\TimeSpanHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\hu\DateHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\hu\TimeSpanHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\id\DateHumanizeTests.cs" />
@@ -101,6 +104,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\pt-BR\NumberToWordsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\pt-BR\OrdinalizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\pt-BR\TimeSpanHumanizeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localisation\pt\OrdinalizeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localisation\pt\TimeSpanHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\ResourcesTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\ro-Ro\CollectionFormatterTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\ro-Ro\DateHumanizeTests.cs" />
@@ -122,6 +127,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\sr\DateHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\sr\NumberToWordsTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\sr\TimeSpanHumanizeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localisation\sv\CollectionFormatterTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\sv\DateHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\sv\TimeSpanHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\tr\DateHumanizeTests.cs" />
@@ -146,6 +152,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\zh-Hant\DateHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Localisation\zh-Hant\TimeSpanHumanizeTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MetricNumeralTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NumberToNumberTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NumberToTimeSpanTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NumberToWordsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OrdinalizeTests.cs" />

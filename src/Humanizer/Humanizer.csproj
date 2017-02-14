@@ -12,10 +12,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Humanizer</RootNamespace>
     <AssemblyName>Humanizer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AssemblyOriginatorKeyFile>Humanizer.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,12 +47,6 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <!-- example NuSpec file that must be specified -->
-    <NuSpecFile Include="$(SolutionDir)..\NuSpecs\Humanizer.Core.nuspec">
-        <Visible>False</Visible>
-    </NuSpecFile> 
-</ItemGroup>
-  <ItemGroup>
     <Compile Include="Bytes\ByteRate.cs" />
     <Compile Include="CollectionHumanizeExtensions.cs" />
     <Compile Include="Configuration\CollectionFormatterRegistry.cs" />
@@ -80,6 +75,9 @@
     <Compile Include="GrammaticalGender.cs" />
     <Compile Include="Localisation\GrammaticalNumber\RussianGrammaticalNumber.cs" />
     <Compile Include="Localisation\GrammaticalNumber\RussianGrammaticalNumberDetector.cs" />
+    <Compile Include="Localisation\NumberToWords\FrenchSwissNumberToWordsConverter.cs" />
+    <Compile Include="Localisation\NumberToWords\FrenchBelgianNumberToWordsConverter.cs" />
+    <Compile Include="Localisation\NumberToWords\FrenchNumberToWordsConverterBase.cs" />
     <Compile Include="Localisation\NumberToWords\NorwegianBokmalNumberToWordsConverter.cs" />
     <Compile Include="Localisation\NumberToWords\FinnishNumberToWordsConverter.cs" />
     <Compile Include="Localisation\NumberToWords\GenderedNumberToWordsConverter.cs" />
@@ -132,6 +130,7 @@
     <Compile Include="Localisation\Tense.cs" />
     <Compile Include="Localisation\NumberToWords\SpanishNumberToWordsConverter.cs" />
     <Compile Include="MetricNumeralExtensions.cs" />
+    <Compile Include="NumberToNumberExtensions.cs" />
     <Compile Include="Plurality.cs" />
     <Compile Include="RegexOptionsUtil.cs" />
     <Compile Include="TimeSpanHumanizeExtensions.cs" />

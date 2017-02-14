@@ -3,9 +3,8 @@
 namespace Humanizer.Tests.Localisation.fr
 {
     [UseCulture("fr-FR")]
-    public class NumberToWordsTests 
+    public class NumberToWordsTests
     {
-
         [Theory]
         [InlineData(0, "zéro")]
         [InlineData(1, "un")]
@@ -15,8 +14,12 @@ namespace Humanizer.Tests.Localisation.fr
         [InlineData(17, "dix-sept")]
         [InlineData(25, "vingt-cinq")]
         [InlineData(31, "trente et un")]
+        [InlineData(70, "soixante-dix")]
         [InlineData(71, "soixante et onze")]
+        [InlineData(80, "quatre-vingts")]
         [InlineData(81, "quatre-vingt-un")]
+        [InlineData(90, "quatre-vingt-dix")]
+        [InlineData(91, "quatre-vingt-onze")]
         [InlineData(122, "cent vingt-deux")]
         [InlineData(3501, "trois mille cinq cent un")]
         [InlineData(100, "cent")]
@@ -53,13 +56,55 @@ namespace Humanizer.Tests.Localisation.fr
         [InlineData(1999, "mille neuf cent quatre-vingt-dix-neuf")]
         [InlineData(2014, "deux mille quatorze")]
         [InlineData(2048, "deux mille quarante-huit")]
+        [InlineData(400, "quatre cents")]
+        [InlineData(401, "quatre cent un")]
+        [InlineData(480, "quatre cent quatre-vingts")]
+        [InlineData(80000, "quatre-vingt mille")]
+        [InlineData(80000000, "quatre-vingts millions")]
+        [InlineData(80080080, "quatre-vingts millions quatre-vingt mille quatre-vingts")]
+        [InlineData(200200200, "deux cents millions deux cent mille deux cents")]
+        [InlineData(200200202, "deux cents millions deux cent mille deux cent deux")]
         public void ToWords(int number, string expected)
         {
             Assert.Equal(expected, number.ToWords());
         }
 
         [Theory]
-        [InlineData(0, "zéroième")]
+        [InlineData(1, "une", GrammaticalGender.Feminine)]
+        [InlineData(1, "un", GrammaticalGender.Masculine)]
+        [InlineData(2, "deux", GrammaticalGender.Feminine)]
+        [InlineData(2, "deux", GrammaticalGender.Masculine)]
+        [InlineData(11, "onze", GrammaticalGender.Feminine)]
+        [InlineData(11, "onze", GrammaticalGender.Masculine)]
+        [InlineData(21, "vingt et une", GrammaticalGender.Feminine)]
+        [InlineData(21, "vingt et un", GrammaticalGender.Masculine)]
+        [InlineData(31, "trente et une", GrammaticalGender.Feminine)]
+        [InlineData(31, "trente et un", GrammaticalGender.Masculine)]
+        [InlineData(41, "quarante et une", GrammaticalGender.Feminine)]
+        [InlineData(41, "quarante et un", GrammaticalGender.Masculine)]
+        [InlineData(51, "cinquante et une", GrammaticalGender.Feminine)]
+        [InlineData(51, "cinquante et un", GrammaticalGender.Masculine)]
+        [InlineData(61, "soixante et une", GrammaticalGender.Feminine)]
+        [InlineData(61, "soixante et un", GrammaticalGender.Masculine)]
+        [InlineData(71, "soixante et onze", GrammaticalGender.Feminine)]
+        [InlineData(71, "soixante et onze", GrammaticalGender.Masculine)]
+        [InlineData(81, "quatre-vingt-une", GrammaticalGender.Feminine)]
+        [InlineData(81, "quatre-vingt-un", GrammaticalGender.Masculine)]
+        [InlineData(91, "quatre-vingt-onze", GrammaticalGender.Feminine)]
+        [InlineData(91, "quatre-vingt-onze", GrammaticalGender.Masculine)]
+        [InlineData(121, "cent vingt et une", GrammaticalGender.Feminine)]
+        [InlineData(121, "cent vingt et un", GrammaticalGender.Masculine)]
+        [InlineData(10121, "dix mille cent vingt et une", GrammaticalGender.Feminine)]
+        [InlineData(10121, "dix mille cent vingt et un", GrammaticalGender.Masculine)]
+        [InlineData(81000, "quatre-vingt-un mille", GrammaticalGender.Feminine)]
+        [InlineData(81000, "quatre-vingt-un mille", GrammaticalGender.Masculine)]
+        public void ToWordsWithGender(int number, string expected, GrammaticalGender gender)
+        {
+            Assert.Equal(expected, number.ToWords(gender));
+        }
+
+        [Theory]
+        [InlineData(0, "zérotième")]
         [InlineData(1, "premier")]
         [InlineData(2, "deuxième")]
         [InlineData(3, "troisième")]
